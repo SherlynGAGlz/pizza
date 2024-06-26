@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "pizzas_backend": {
+      "build": "npx azle pizzas_backend",
+      "candid": "src/pizzas_backend/pizzas_backend.did",
+      "gzip": true,
+      "main": "src/pizzas_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/pizzas_backend/pizzas_backend.wasm"
+    },
+    "pizzas_frontend": {
+      "dependencies": [
+        "pizzas_backend"
+      ],
+      "source": [
+        "src/pizzas_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "pizzas_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
